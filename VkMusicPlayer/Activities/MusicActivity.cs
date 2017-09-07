@@ -2,7 +2,6 @@
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Support.V7.Widget;
-using Android.Widget;
 using VkMusicPlayer.Helper;
 
 namespace VkMusicPlayer
@@ -15,8 +14,8 @@ namespace VkMusicPlayer
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Main);
-            _musicListView = (ListViewCompat) FindViewById(Resource.Id.MusicLv);
-            _musicListView.Adapter = new MusicAdapter(this,DataHolder.SongLists);
+            _musicListView = (ListViewCompat)FindViewById(Resource.Id.MusicLv);
+            _musicListView.Adapter = new MusicAdapter(this, DataHolder.SongLists);
         }
     }
 }

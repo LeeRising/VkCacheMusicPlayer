@@ -1,6 +1,10 @@
-﻿using Android.App;
+﻿using System;
+using System.IO;
+using System.Linq;
+using Android.App;
 using Android.Content;
 using Android.OS;
+using Android.Support.V7.App;
 using Object = Java.Lang.Object;
 using SQLite;
 using VkMusicPlayer.Helper;
@@ -32,13 +36,22 @@ namespace VkMusicPlayer.Utils.Tasks
         {
             base.OnPostExecute(result);
             _progressDialog.Hide();
+            (_context as AppCompatActivity)?.Finish();
             _context.StartActivity(typeof(MusicActivity));
         }
 
         private async void ReadDataFromDb()
         {
-            var vkDb = new SQLiteAsyncConnection(DataHolder.VkDbPath);
-            DataHolder.SongLists = await vkDb.QueryAsync<SongModel>("SELECT artist,title,lyrics_text,position,file FROM saved_track");
+            try
+            {
+                var vkDb = new SQLiteAsyncConnection(DataHolder.VkDbPath,SQLiteOpenFlags.ReadOnly);
+                //DataHolder.Song = await vkDb.ExecuteScalarAsync<SongModel>("SELECT artist,title,lyrics_text,position,file FROM saved_track WHERE _id=490");
+                DataHolder.Song.artist = await vkDb.ExecuteScalarAsync<string>("SELECT artist FROM saved_track WHERE _id=1");
+            }
+            catch (Exception e)
+            {
+                var ex = e;
+            }
         }
     }
 }

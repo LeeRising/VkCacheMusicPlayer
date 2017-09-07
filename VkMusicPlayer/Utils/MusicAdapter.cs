@@ -26,8 +26,8 @@ namespace VkMusicPlayer
             var view = convertView ?? LayoutInflater.From(_context).Inflate(Resource.Layout.music_list_layout, parent);
             var artistTextView = (TextView) view.FindViewById(Resource.Id.ArtistTv);
             var songTextView = (TextView)view.FindViewById(Resource.Id.SongTv);
-            artistTextView.Text = _songList[position].Artist;
-            songTextView.Text = _songList[position].Title;
+            artistTextView.Text = _songList[position].artist;
+            songTextView.Text = _songList[position].title;
             return view;
         }
 

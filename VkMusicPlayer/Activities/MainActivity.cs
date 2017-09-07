@@ -12,7 +12,6 @@ namespace VkMusicPlayer
         {
             base.OnCreate(savedInstanceState);
             new LoadMusicTask(this).Execute();
-            Finish();
         }
     }
 }
