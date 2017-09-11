@@ -3,7 +3,31 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent">
+        <ImageView
+            android:layout_height="25dp"
+            android:layout_width="25dp"
+            android:tint="#000"
+            android:src="@drawable/magnify"
+            android:layout_gravity="center|left" />
+        <EditText
+            android:id="@+id/SearchText"
+            android:hint="Search"
+            android:layout_height="wrap_content"
+            android:paddingLeft="25dp"
+            android:layout_width="fill_parent" />
+        <ImageView
+            android:id="@+id/ClearSearch"
+            android:layout_height="25dp"
+            android:layout_width="35dp"
+            android:tint="#000"
+            android:src="@drawable/arrow_left"
+            android:layout_gravity="center|right" />
+    </FrameLayout>
     <ListView
+        android:focusable="true"
         android:layout_height="fill_parent"
         android:layout_width="fill_parent"
         android:id="@+id/MusicLv" />

@@ -39,6 +39,11 @@ namespace VkMusicPlayer
             return convertView;
         }
 
+        public saved_track GetTrack(int position)
+        {
+            return _songList[position];
+        }
+
         public override int Count => _songList.Count;
     }
 }
