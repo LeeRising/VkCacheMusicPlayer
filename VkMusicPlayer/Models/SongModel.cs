@@ -1,11 +1,11 @@
 ﻿namespace VkMusicPlayer
 {
-    public class SongModel
+    public class saved_track
     {
-        public string artist { get; set; }
-        public string title { get; set; }
-        public string lyrics_text { get; set; }
-        public string position { get; set; }
-        public string file { get; set; }
+        public string Artist { get; set; }
+        public string Title { get; set; }
+        public string Lyrics_text { get; set; }
+        public string Position { get; set; }
+        public string File { get; set; }
     }
 }

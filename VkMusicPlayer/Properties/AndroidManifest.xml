@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="VkMusicPlayer.VkMusicPlayer" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.cannary.vkplayer" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="19" />
-	<uses-permission android:name="android.permission.CAPTURE_AUDIO_OUTPUT" />
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-	<application android:allowBackup="true" android:label="@string/app_name" android:theme="@style/IndigoTheme"></application>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<application android:allowBackup="true" android:label="@string/app_name" android:theme="@style/IndigoTheme" android:icon="@drawable/icon"></application>
 </manifest>
