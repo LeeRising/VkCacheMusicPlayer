@@ -21,7 +21,6 @@ namespace VkMusicPlayer
             {
                 ShowMenuDialog();
                 SearchBar();
-                PlayMusic();
             }
             catch (Exception)
             {
@@ -76,12 +75,6 @@ namespace VkMusicPlayer
                         });
                 };
             FindViewById<ImageView>(Resource.Id.ClearSearch).Click += delegate { searchText.Text = string.Empty; };
-        }
-
-        private void PlayMusic()
-        {
-            var playBtn = FindViewById<ImageView>(Resource.Id.PlayBtn);
-
         }
     }
 }

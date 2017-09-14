@@ -31,12 +31,13 @@ namespace VkMusicPlayer
             if (!IsCopyFile()) return false;
             try
             {
-                var vkDb = new SQLiteConnection(DataHolder.AppDbPath);
-                DataHolder.SongLists = vkDb.Table<saved_track>().ToList().OrderBy(x=> x.Position).ToList();
+                Console.WriteLine(DataHolder.AndroidDataPath);
+                var vkDb = new SQLiteConnection(DataHolder.AndroidDataPath);
+                DataHolder.SongLists = vkDb.Table<saved_track>().ToList().OrderBy(x => x.Position).ToList();
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                var v = e;
+                LoadCacheMusic();
             }
             return true;
         }
@@ -54,83 +55,29 @@ namespace VkMusicPlayer
             try
             {
                 var p = Runtime.GetRuntime();
-                var command = new[] { "su", "-c", $"chmod 777 {DataHolder.VkDbPath}" };
-                p.Exec(command).WaitFor();
-                if (!CanRunRootCommands()) return true;
-                var exist = File.Exists(DataHolder.AppDbPath);
-                if (exist)
-                {
-                    var appDbBytes = File.ReadAllBytes(DataHolder.AppDbPath);
-                    var vkDbBytes = File.ReadAllBytes(DataHolder.VkDbPath);
-                    if (appDbBytes != vkDbBytes)
-                    {
-                        command = new[] { "su", "-c", $"rm {DataHolder.AppDbPath}" };
-                        p.Exec(command).WaitFor();
-                        exist = false;
-                    }
-                }
-                if (exist) return true;
-                command = new[] { "su", "-c", $"cp {DataHolder.VkDbPath} {DataHolder.AppDbPath}" };
-                p.Exec(command).WaitFor();
-                command = new[] { "su", "-c", $"chmod 777 {DataHolder.AppDbPath}" };
+                var command = new[] { "su", "-c", $"cp -a {DataHolder.VkDbPath} {DataHolder.AndroidDataPath}" };
                 p.Exec(command).WaitFor();
                 return true;
             }
             catch (Exception e)
             {
-                var v = e;
+                Console.WriteLine(e);
                 return false;
             }
         }
 
-        public static bool CanRunRootCommands()
+        private void LoadCacheMusic()
         {
-            var retval = false;
-            Java.Lang.Process suProcess;
-            try
-            {
-                suProcess = Runtime.GetRuntime().Exec("su");
-                var os = new Java.IO.DataOutputStream(suProcess.OutputStream);
-                var osRes = new Java.IO.DataInputStream(suProcess.InputStream);
-                if (null != os && null != osRes)
+            var musics = Directory.GetFiles(DataHolder.CachePath);
+            var i = 0;
+            foreach (var music in musics)
+                DataHolder.SongLists.Add(new saved_track
                 {
-                    os.WriteBytes("id\n");
-                    os.Flush();
-                    string currUid = osRes.ReadLine();
-                    bool exitSu = false;
-                    if (null == currUid)
-                    {
-                        retval = false;
-                        exitSu = false;
-                        Console.WriteLine("Can't get root access or denied by user");
-                    }
-                    else if (true == currUid.Contains("uid=0"))
-                    {
-                        retval = true;
-                        exitSu = true;
-                        Console.WriteLine("Root access granted");
-                    }
-                    else
-                    {
-                        retval = false;
-                        exitSu = true;
-                        Console.WriteLine("Root access rejected: " + currUid);
-                    }
-
-                    if (exitSu)
-                    {
-                        os.WriteBytes("exit\n");
-                        os.Flush();
-                    }
-                }
-            }
-            catch (Java.Lang.Exception e)
-            {
-                retval = false;
-                Console.WriteLine("Root access rejected [" + e.Class.Name + "] : " + e.Message);
-            }
-
-            return retval;
+                    Artist = Path.GetFileName(music),
+                    File = music,
+                    Position = i++,
+                    Lyrics_text = i++.ToString()
+                });
         }
     }
 }

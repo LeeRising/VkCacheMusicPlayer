@@ -33,7 +33,7 @@ namespace VkMusicPlayer
             songPlayBtn.Click += (sender, e) =>
             {
                 var intent = new Intent(_context,typeof(PlayerActivity));
-                intent.PutExtra("Position", position.ToString());
+                intent.PutExtra("File", _songList[position].File);
                 _context.StartActivity(intent);
             };
             return convertView;
