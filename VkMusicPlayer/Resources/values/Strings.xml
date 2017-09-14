@@ -5,4 +5,5 @@
     <item>Lyrics</item>
     <item>Share</item>
   </string-array>
+  <string name="play_circle">&#xf40c;</string>
 </resources>

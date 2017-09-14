@@ -8,4 +8,8 @@
     <item name="android:divider">@color/divider</item>
     <item name="android:keyTextColor">@color/texts</item>
   </style>
+  <style name="IconifyTextViewStyle" parent="android:Widget.TextView">
+    <item name="android:textColor">@drawable/iconTextView_selector</item>
+    <item name="android:textSize">36sp</item>
+  </style>
 </resources>

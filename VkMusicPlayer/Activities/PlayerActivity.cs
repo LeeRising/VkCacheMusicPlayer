@@ -4,20 +4,25 @@ using Android.App;
 using Android.Media;
 using Android.OS;
 using Android.Support.V7.App;
+using Android.Widget;
+using System.Linq;
 
 namespace VkMusicPlayer.Activities
 {
     [Activity(Label = "Music Player", ParentActivity = typeof(MusicActivity))]
     public class PlayerActivity : AppCompatActivity
     {
-        private MediaPlayer _player;
+        private static MediaPlayer Player=>new MediaPlayer();
+        private int _position;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Player);
             SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            MusicEncoder.ProcessBytes(Intent.GetStringExtra("File"));
-            MusicPlayerInit();
+            _position = Intent.GetIntExtra("position",0);
+            FindViewById<TextView>(Resource.Id.SongNameTv).Text = $"{DataHolder.SongLists[_position].Artist} - {DataHolder.SongLists[_position].Title}";
+            MusicEncoder.ProcessBytes(DataHolder.SongLists[_position].File);
+            //MusicPlayerInit();
         }
 
         public void Shuffle<T>(IList<T> list)
@@ -36,18 +41,23 @@ namespace VkMusicPlayer.Activities
 
         private async void MusicPlayerInit()
         {
-            if (_player != null)
-                _player = new MediaPlayer();
-            _player.SetAudioStreamType(Stream.Music);
-            _player.Prepared += (sender, args) => _player.Start();
-            _player.Completion += (sender, args) => _player.Stop();
-            _player.Error += (sender, args) =>
+            try
             {
-                Console.WriteLine("Error in playback resetting: " + args.What);
-                _player.Stop();
-            };
-            await _player.SetDataSourceAsync(DataHolder.CachePath + "/tmp.mp3");
-            _player.PrepareAsync();
+                Player.SetAudioStreamType(Stream.Music);
+                Player.Prepared += (sender, args) => Player.Start();
+                Player.Completion += (sender, args) => Player.Stop();
+                Player.Error += (sender, args) =>
+                {
+                    Console.WriteLine("Error in playback resetting: " + args.What);
+                    Player.Stop();
+                };
+                await Player.SetDataSourceAsync(DataHolder.CachePath + "/tmp.mp3");
+                Player.PrepareAsync();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
         }
     }
 }
