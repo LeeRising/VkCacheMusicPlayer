@@ -6,4 +6,11 @@
     <item>Share</item>
   </string-array>
   <string name="play_circle">&#xf40c;</string>
+  <string name="search">&#xf349;</string>
+  <string name="delete_arrow">&#xf731;</string>
+  <string name="previous">&#xf796;</string>
+  <string name="play_pause">&#xf40e;</string>
+  <string name="stop">&#xf731;</string>
+  <string name="next">&#xf797;</string>
+  <string name="replay">&#xf459;</string>
 </resources>

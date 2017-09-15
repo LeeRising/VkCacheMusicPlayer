@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using Android.App;
 using Android.OS;
 using Android.Support.V7.App;
+using Android.Util;
+using Android.Views;
 using Android.Widget;
 using AlertDialog = Android.App.AlertDialog;
 
@@ -13,6 +15,7 @@ namespace VkMusicPlayer
     public class MusicActivity : AppCompatActivity
     {
         private ListView _musicListView;
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -21,6 +24,7 @@ namespace VkMusicPlayer
             {
                 ShowMenuDialog();
                 SearchBar();
+                SetHeightForiconify(FindViewById<ViewGroup>(Resource.Id.MusicTopBar));
             }
             catch (Exception)
             {
@@ -33,7 +37,14 @@ namespace VkMusicPlayer
                     });
             }
         }
-
+        public static void SetHeightForiconify(ViewGroup views)
+        {
+            for (var i = 0; i < views.ChildCount; i++)
+            {
+                var childView = views.GetChildAt(i) as IconifyTextView;
+                childView?.SetTextSize(ComplexUnitType.Px, childView.Height);
+            }
+        }
         private void ShowMenuDialog()
         {
             _musicListView = FindViewById<ListView>(Resource.Id.MusicLv);
@@ -74,7 +85,7 @@ namespace VkMusicPlayer
                             });
                         });
                 };
-            FindViewById<ImageView>(Resource.Id.ClearSearch).Click += delegate { searchText.Text = string.Empty; };
+            FindViewById<IconifyTextView>(Resource.Id.ClearSearch).Click += delegate { searchText.Text = string.Empty; };
         }
     }
 }

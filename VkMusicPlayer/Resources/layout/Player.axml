@@ -1,36 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:custom="http://schemas.android.com/apk/res/com.canary.vkplayer"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Song name"
-        android:id="@+id/SongNameTv" />
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="25dp"
-        android:layout_gravity="center"
-        android:paddingRight="25dp"
-        android:orientation="horizontal">
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-       android:src="@drawable/previous"/>
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-        android:src="@drawable/play_pause"/>
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp" 
-      android:src="@drawable/stop"/>
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-          android:src="@drawable/stop"/>
-    </LinearLayout>
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:text="Song name"
+      android:id="@+id/SongNameTv" />
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:paddingLeft="25dp"
+      android:layout_gravity="center"
+      android:paddingRight="25dp"
+      android:orientation="horizontal">
+    <VkMusicPlayer.IconifyTextView
+      custom:Typeface="fonts/materialdesignicons.ttf"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="@string/previous"/>
+    <VkMusicPlayer.IconifyTextView
+      custom:Typeface="fonts/materialdesignicons.ttf"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="@string/play_pause"/>
+    <VkMusicPlayer.IconifyTextView
+      custom:Typeface="fonts/materialdesignicons.ttf"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="@string/stop"/>
+    <VkMusicPlayer.IconifyTextView
+      custom:Typeface="fonts/materialdesignicons.ttf"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="@string/next"/>
+  </LinearLayout>
 </LinearLayout>

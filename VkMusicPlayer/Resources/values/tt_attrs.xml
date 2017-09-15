@@ -1,0 +1,5 @@
+﻿<resources>
+  <declare-styleable name="IconifyTextView">
+    <attr name="Typeface" format="string" />
+  </declare-styleable>
+</resources>

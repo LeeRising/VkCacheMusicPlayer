@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:custom="http://schemas.android.com/apk/res/com.canary.vkplayer"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <FrameLayout
+       android:id="@+id/MusicTopBar"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent">
-        <ImageView
-            android:layout_height="25dp"
-            android:layout_width="25dp"
-            android:tint="#000"
-            android:src="@drawable/search"
+      <VkMusicPlayer.IconifyTextView
+          custom:Typeface="fonts/materialdesignicons.ttf"
+          android:layout_height="36dp"
+            android:layout_width="36dp"
+            android:text="@string/search"
             android:layout_gravity="center|left" />
         <EditText
             android:id="@+id/SearchText"
             android:hint="Search"
-            android:layout_height="wrap_content"
-            android:paddingLeft="25dp"
+            android:layout_height="36dp"
+            android:paddingLeft="36dp"
             android:layout_width="fill_parent" />
-        <ImageView
+      <VkMusicPlayer.IconifyTextView
+        custom:Typeface="fonts/materialdesignicons.ttf"
             android:id="@+id/ClearSearch"
-            android:layout_height="25dp"
-            android:layout_width="35dp"
-            android:tint="#000"
-            android:src="@drawable/delete_arrow"
+            android:layout_height="36dp"
+            android:layout_width="45dp"
+            android:text="@string/delete_arrow"
             android:layout_gravity="center|right" />
     </FrameLayout>
     <ListView

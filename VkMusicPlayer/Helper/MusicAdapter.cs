@@ -1,9 +1,5 @@
 ﻿using System.Collections.Generic;
-using Android.App;
 using Android.Content;
-using Android.Graphics;
-using Android.Support.V4.App;
-using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using VkMusicPlayer.Activities;
@@ -33,8 +29,7 @@ namespace VkMusicPlayer
                 convertView = LayoutInflater.From(_context).Inflate(Resource.Layout.music_list_layout, null,false);
             var artistTextView = convertView.FindViewById<TextView>(Resource.Id.ArtistTv);
             var songTextView = convertView.FindViewById<TextView>(Resource.Id.SongTv);
-            var songPlayBtn = convertView.FindViewById<TextView>(Resource.Id.PlayBtn);
-            songPlayBtn.Typeface = Typeface.CreateFromAsset(_context.Assets, "fonts/materialdesignicons.ttf");
+            var songPlayBtn = convertView.FindViewById<IconifyTextView>(Resource.Id.PlayBtn);
             artistTextView.Text = _songList[position].Artist;
             songTextView.Text = _songList[position].Title;
             songPlayBtn.Click += (sender, e) =>
