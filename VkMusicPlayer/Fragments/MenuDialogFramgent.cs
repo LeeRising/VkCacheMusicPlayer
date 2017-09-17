@@ -11,15 +11,13 @@ namespace VkMusicPlayer
     public class MenuDialogFramgent : DialogFragment
     {
         private ListView _menuList;
-        private string _lyricsText;
-        private string _title;
+        private int _position;
         private AppCompatActivity _activity;
 
-        public MenuDialogFramgent(AppCompatActivity activity, string lyricsText, string title)
+        public MenuDialogFramgent(AppCompatActivity activity, int position)
         {
             _activity = activity;
-            _lyricsText = lyricsText;
-            _title = title;
+            _position = position;
         }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
@@ -30,16 +28,25 @@ namespace VkMusicPlayer
             {
                 if (e.Id == 0)
                 {
-                    if (_lyricsText != null)
+                    if (DataHolder.SongLists[_position].Lyrics_text != null)
                     {
                         var intent = new Intent(Activity, typeof(LyricsActivity));
-                        intent.PutExtra("Lyrics", _lyricsText);
-                        intent.PutExtra("Title", _title);
+                        intent.PutExtra("Lyrics", DataHolder.SongLists[_position].Lyrics_text);
+                        intent.PutExtra("Title", DataHolder.SongLists[_position].Title);
                         StartActivity(intent);
                     }
                     else
                         Toast.MakeText(_activity, "No lyrics for this song!", ToastLength.Long).Show();
                     Dialog.Dismiss();
+                }
+                if (e.Id == 1)
+                {
+                    var sharingIntent = new Intent(Intent.ActionSend);
+                    sharingIntent.SetType("text/plain");
+                    sharingIntent.PutExtra(Intent.ExtraSubject, "Listen this incredible music");
+                    sharingIntent.PutExtra(Intent.ExtraText, $"{DataHolder.SongLists[_position].Artist} - {DataHolder.SongLists[_position].Title}");
+                    sharingIntent.PutExtra(Intent.ExtraTitle, "Send music");
+                    StartActivity(Intent.CreateChooser(sharingIntent,"Sharing options"));
                 }
             };
             Dialog.SetTitle("Music menu");

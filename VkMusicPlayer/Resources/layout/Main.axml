@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:custom="http://schemas.android.com/apk/res/com.canary.vkplayer"
+    xmlns:custom="http://schemas.android.com/apk/res/com.canary.vkplayer"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <FrameLayout
-       android:id="@+id/MusicTopBar"
+        android:id="@+id/MusicTopBar"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent">
-      <VkMusicPlayer.IconifyTextView
-          custom:Typeface="fonts/materialdesignicons.ttf"
-          android:layout_height="36dp"
+        <VkMusicPlayer.IconifyTextView
+            custom:Typeface="fonts/materialdesignicons.ttf"
+            android:layout_height="36dp"
             android:layout_width="36dp"
             android:text="@string/search"
+            android:clickable="false"
             android:layout_gravity="center|left" />
         <EditText
             android:id="@+id/SearchText"
             android:hint="Search"
-            android:layout_height="36dp"
+            android:layout_height="40dp"
             android:paddingLeft="36dp"
             android:layout_width="fill_parent" />
-      <VkMusicPlayer.IconifyTextView
-        custom:Typeface="fonts/materialdesignicons.ttf"
+        <VkMusicPlayer.IconifyTextView
+            custom:Typeface="fonts/materialdesignicons.ttf"
             android:id="@+id/ClearSearch"
             android:layout_height="36dp"
             android:layout_width="45dp"

@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Android.Util;
-using Android.Views;
+using Android.Content;
 
 namespace VkMusicPlayer
 {
@@ -14,14 +13,6 @@ namespace VkMusicPlayer
         public static readonly string CachePath = "/storage/emulated/0/Android/data/com.vkontakte.android/files/Music";
         public static readonly string AndroidDataPath = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath,"Android/data/com.canary.vkplayer/VkSong.db");
         public static readonly string DataBasePath = "/data/data/com.canary.vkplayer/database";
-
-        public static void SetHeightForiconify(ViewGroup views)
-        {
-            for (var i = 0; i < views.ChildCount; i++)
-            {
-                var childView = views.GetChildAt(i);
-                (childView as IconifyTextView)?.SetTextSize(ComplexUnitType.Px, 1);
-            }
-        }
+        public static List<Intent> IntentsList = new List<Intent>();
     }
 }

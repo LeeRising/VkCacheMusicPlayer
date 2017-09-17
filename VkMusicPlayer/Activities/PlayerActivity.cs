@@ -5,7 +5,6 @@ using Android.Media;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Widget;
-using System.Linq;
 
 namespace VkMusicPlayer.Activities
 {
@@ -23,6 +22,13 @@ namespace VkMusicPlayer.Activities
             FindViewById<TextView>(Resource.Id.SongNameTv).Text = $"{DataHolder.SongLists[_position].Artist} - {DataHolder.SongLists[_position].Title}";
             MusicEncoder.ProcessBytes(DataHolder.SongLists[_position].File);
             //MusicPlayerInit();
+        }
+
+        protected override void OnStop()
+        {
+            base.OnStop();
+            var intent = DataHolder.IntentsList[0];
+            if (intent != null) DataHolder.IntentsList.Remove(intent);
         }
 
         public void Shuffle<T>(IList<T> list)

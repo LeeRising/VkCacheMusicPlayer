@@ -129,12 +129,11 @@
     <Compile Include="Controls\IconifyTextView.cs" />
     <Compile Include="Fragments\MenuDialogFramgent.cs" />
     <Compile Include="Helper\DataHolder.cs" />
-    <Compile Include="Helper\IconifySet.cs" />
     <Compile Include="Models\SongModel.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\StreamingBackgroundService.cs" />
-    <Compile Include="Helper\MusicAdapter.cs" />
+    <Compile Include="Adapters\MusicAdapter.cs" />
     <Compile Include="Helper\MusicEncoder.cs" />
     <Compile Include="Tasks\LoadMusicTask.cs" />
   </ItemGroup>
@@ -168,6 +167,7 @@
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Dialogs\" />
     <Folder Include="Resources\mipmap-hdpi\" />
     <Folder Include="Resources\mipmap-mdpi\" />
     <Folder Include="Resources\mipmap-xhdpi\" />

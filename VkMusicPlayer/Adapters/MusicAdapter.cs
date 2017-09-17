@@ -26,7 +26,7 @@ namespace VkMusicPlayer
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             if (convertView == null)
-                convertView = LayoutInflater.From(_context).Inflate(Resource.Layout.music_list_layout, null,false);
+                convertView = LayoutInflater.From(_context).Inflate(Resource.Layout.music_list_layout, null, false);
             var artistTextView = convertView.FindViewById<TextView>(Resource.Id.ArtistTv);
             var songTextView = convertView.FindViewById<TextView>(Resource.Id.SongTv);
             var songPlayBtn = convertView.FindViewById<IconifyTextView>(Resource.Id.PlayBtn);
@@ -35,6 +35,7 @@ namespace VkMusicPlayer
             songPlayBtn.Click += (sender, e) =>
             {
                 _intent.PutExtra("position", position);
+                if (DataHolder.IntentsList.Contains(_intent)) return;
                 _context.StartActivity(_intent);
             };
             return convertView;

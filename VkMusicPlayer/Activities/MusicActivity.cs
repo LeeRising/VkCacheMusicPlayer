@@ -24,7 +24,6 @@ namespace VkMusicPlayer
             {
                 ShowMenuDialog();
                 SearchBar();
-                SetHeightForiconify(FindViewById<ViewGroup>(Resource.Id.MusicTopBar));
             }
             catch (Exception)
             {
@@ -35,14 +34,6 @@ namespace VkMusicPlayer
                     {
                         Finish();
                     });
-            }
-        }
-        public static void SetHeightForiconify(ViewGroup views)
-        {
-            for (var i = 0; i < views.ChildCount; i++)
-            {
-                var childView = views.GetChildAt(i) as IconifyTextView;
-                childView?.SetTextSize(ComplexUnitType.Px, childView.Height);
             }
         }
         private void ShowMenuDialog()
@@ -58,7 +49,7 @@ namespace VkMusicPlayer
                     ft.Remove(prev);
                 var getAdapter = _musicListView.Adapter;
                 var track = (getAdapter as MusicAdapter)?.GetTrack(e.Position);
-                if (track != null) new MenuDialogFramgent(this, track.Lyrics_text,track.Title).Show(ft, "music_dialog");
+                if (track != null) new MenuDialogFramgent(this, track.Position).Show(ft, "music_dialog");
             };
         }
 
