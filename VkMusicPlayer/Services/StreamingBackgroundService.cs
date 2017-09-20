@@ -6,7 +6,7 @@ using Android.Net;
 using Android.Net.Wifi;
 using Android.OS;
 
-namespace VkMusicPlayer.Services
+namespace VkMusicPlayer
 {
     [Service]
     [IntentFilter(new[] { ActionPlay, ActionPause, ActionStop })]
@@ -17,7 +17,7 @@ namespace VkMusicPlayer.Services
         public const string ActionPause = "com.xamarin.action.PAUSE";
         public const string ActionStop = "com.xamarin.action.STOP";
 
-        private const string Mp3 = @"http://www.montemagno.com/sample.mp3";
+        private string Mp3 = DataHolder.CachePath + "/tmp.mp3";
 
         private MediaPlayer player;
         private AudioManager audioManager;

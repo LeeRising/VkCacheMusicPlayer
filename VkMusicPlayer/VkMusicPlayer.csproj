@@ -136,6 +136,7 @@
     <Compile Include="Adapters\MusicAdapter.cs" />
     <Compile Include="Helper\MusicEncoder.cs" />
     <Compile Include="Tasks\LoadMusicTask.cs" />
+    <Compile Include="Tasks\PlayerTask.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\fonts\materialdesignicons.ttf" />
@@ -159,12 +160,17 @@
     <AndroidResource Include="Resources\layout\Lyrics.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\player_music_list.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\values\Strings.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dialogs\" />

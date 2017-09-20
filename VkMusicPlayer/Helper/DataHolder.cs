@@ -8,6 +8,7 @@ namespace VkMusicPlayer
     public class DataHolder
     {
         public static List<saved_track> SongLists = new List<saved_track>();
+        public static List<saved_track> PlayLists = new List<saved_track>();
         public static readonly string VkDbPath = "/data/data/com.vkontakte.android/databases/databaseVerThree.db";
         public static readonly string PersonalPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "VkSong.db");
         public static readonly string CachePath = "/storage/emulated/0/Android/data/com.vkontakte.android/files/Music";

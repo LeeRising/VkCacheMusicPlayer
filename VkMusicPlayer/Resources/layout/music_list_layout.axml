@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:custom="http://schemas.android.com/apk/res/com.canary.vkplayer"
+    xmlns:custom="http://schemas.android.com/apk/res/com.canary.vkplayer"
     android:orientation="horizontal"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:padding="5dp">
-  <VkMusicPlayer.IconifyTextView
+    <VkMusicPlayer.IconifyTextView
         custom:Typeface="fonts/materialdesignicons.ttf"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:id="@+id/PlayBtn"
         android:layout_gravity="center"
-        android:text="@string/play_circle"/>
+        android:text="@string/play_circle" />
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="wrap_content"

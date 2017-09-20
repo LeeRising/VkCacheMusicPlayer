@@ -3,6 +3,7 @@ using Android.Content;
 using Android.Graphics;
 using Android.Runtime;
 using Android.Util;
+using Android.Views;
 using Android.Widget;
 
 namespace VkMusicPlayer
@@ -36,6 +37,7 @@ namespace VkMusicPlayer
             var typeFacePath = array?.GetString(Resource.Styleable.IconifyTextView_Typeface);
             if (typeFacePath == null) return;
             Typeface = Typeface.CreateFromAsset(context.Assets, typeFacePath);
+            Gravity = GravityFlags.Center;
         }
 
         protected IconifyTextView(IntPtr javaReference, JniHandleOwnership transfer) : base(javaReference, transfer)

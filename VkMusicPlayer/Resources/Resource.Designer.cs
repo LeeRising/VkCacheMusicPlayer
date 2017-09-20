@@ -2232,20 +2232,41 @@ namespace VkMusicPlayer
 			// aapt resource value: 0x7f070089
 			public const int MenuListView = 2131165321;
 			
+			// aapt resource value: 0x7f0700a1
+			public const int MusicLineBar = 2131165345;
+			
 			// aapt resource value: 0x7f070085
 			public const int MusicLv = 2131165317;
 			
 			// aapt resource value: 0x7f070082
 			public const int MusicTopBar = 2131165314;
 			
+			// aapt resource value: 0x7f0700a5
+			public const int NextBtn = 2131165349;
+			
 			// aapt resource value: 0x7f070086
 			public const int PlayBtn = 2131165318;
+			
+			// aapt resource value: 0x7f0700a8
+			public const int PlayListBtn = 2131165352;
+			
+			// aapt resource value: 0x7f0700a4
+			public const int PlayPauseBtn = 2131165348;
+			
+			// aapt resource value: 0x7f0700a3
+			public const int PreviousBtn = 2131165347;
+			
+			// aapt resource value: 0x7f0700a7
+			public const int ReplayBtn = 2131165351;
 			
 			// aapt resource value: 0x7f070083
 			public const int SearchText = 2131165315;
 			
-			// aapt resource value: 0x7f0700a1
-			public const int SongNameTv = 2131165345;
+			// aapt resource value: 0x7f0700a6
+			public const int ShuffleBtn = 2131165350;
+			
+			// aapt resource value: 0x7f0700a2
+			public const int SongNameTv = 2131165346;
 			
 			// aapt resource value: 0x7f070088
 			public const int SongTv = 2131165320;
@@ -2478,8 +2499,8 @@ namespace VkMusicPlayer
 			// aapt resource value: 0x7f070048
 			public const int list_item = 2131165256;
 			
-			// aapt resource value: 0x7f0700a3
-			public const int masked = 2131165347;
+			// aapt resource value: 0x7f0700aa
+			public const int masked = 2131165354;
 			
 			// aapt resource value: 0x7f070090
 			public const int media_actions = 2131165328;
@@ -2703,8 +2724,8 @@ namespace VkMusicPlayer
 			// aapt resource value: 0x7f07000e
 			public const int view_offset_helper = 2131165198;
 			
-			// aapt resource value: 0x7f0700a2
-			public const int visible = 2131165346;
+			// aapt resource value: 0x7f0700a9
+			public const int visible = 2131165353;
 			
 			// aapt resource value: 0x7f070027
 			public const int withText = 2131165223;
@@ -2949,16 +2970,19 @@ namespace VkMusicPlayer
 			public const int Player = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int select_dialog_item_material = 2130903101;
+			public const int player_music_list = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int select_dialog_multichoice_material = 2130903102;
+			public const int select_dialog_item_material = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int select_dialog_singlechoice_material = 2130903103;
+			public const int select_dialog_multichoice_material = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int support_simple_spinner_dropdown_item = 2130903104;
+			public const int select_dialog_singlechoice_material = 2130903104;
+			
+			// aapt resource value: 0x7f030041
+			public const int support_simple_spinner_dropdown_item = 2130903105;
 			
 			static Layout()
 			{
@@ -3081,8 +3105,8 @@ namespace VkMusicPlayer
 			// aapt resource value: 0x7f08002c
 			public const int delete_arrow = 2131230764;
 			
-			// aapt resource value: 0x7f080030
-			public const int next = 2131230768;
+			// aapt resource value: 0x7f080031
+			public const int next = 2131230769;
 			
 			// aapt resource value: 0x7f080024
 			public const int password_toggle_content_description = 2131230756;
@@ -3099,17 +3123,23 @@ namespace VkMusicPlayer
 			// aapt resource value: 0x7f080028
 			public const int path_password_strike_through = 2131230760;
 			
+			// aapt resource value: 0x7f08002f
+			public const int pause = 2131230767;
+			
+			// aapt resource value: 0x7f08002e
+			public const int play = 2131230766;
+			
 			// aapt resource value: 0x7f08002a
 			public const int play_circle = 2131230762;
 			
-			// aapt resource value: 0x7f08002e
-			public const int play_pause = 2131230766;
+			// aapt resource value: 0x7f080034
+			public const int play_list = 2131230772;
 			
 			// aapt resource value: 0x7f08002d
 			public const int previous = 2131230765;
 			
-			// aapt resource value: 0x7f080031
-			public const int replay = 2131230769;
+			// aapt resource value: 0x7f080032
+			public const int replay = 2131230770;
 			
 			// aapt resource value: 0x7f08002b
 			public const int search = 2131230763;
@@ -3117,11 +3147,14 @@ namespace VkMusicPlayer
 			// aapt resource value: 0x7f080013
 			public const int search_menu_title = 2131230739;
 			
+			// aapt resource value: 0x7f080033
+			public const int shuffle = 2131230771;
+			
 			// aapt resource value: 0x7f080014
 			public const int status_bar_notification_info_overflow = 2131230740;
 			
-			// aapt resource value: 0x7f08002f
-			public const int stop = 2131230767;
+			// aapt resource value: 0x7f080030
+			public const int stop = 2131230768;
 			
 			static String()
 			{

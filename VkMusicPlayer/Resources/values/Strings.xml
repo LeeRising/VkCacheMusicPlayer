@@ -8,9 +8,12 @@
   <string name="play_circle">&#xf40c;</string>
   <string name="search">&#xf349;</string>
   <string name="delete_arrow">&#xf731;</string>
-  <string name="previous">&#xf796;</string>
-  <string name="play_pause">&#xf40e;</string>
-  <string name="stop">&#xf731;</string>
-  <string name="next">&#xf797;</string>
+  <string name="previous">&#xf222;</string>
+  <string name="play">&#xf488;</string>
+  <string name="pause">&#xf210;</string>
+  <string name="stop">&#xf24f;</string>
+  <string name="next">&#xf223;</string>
   <string name="replay">&#xf459;</string>
+  <string name="shuffle">&#xf49d;</string>
+  <string name="play_list">&#xf411;</string>
 </resources>

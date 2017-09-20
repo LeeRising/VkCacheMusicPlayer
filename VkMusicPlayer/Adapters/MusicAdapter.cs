@@ -2,7 +2,6 @@
 using Android.Content;
 using Android.Views;
 using Android.Widget;
-using VkMusicPlayer.Activities;
 
 namespace VkMusicPlayer
 {
@@ -37,14 +36,12 @@ namespace VkMusicPlayer
                 _intent.PutExtra("position", position);
                 if (DataHolder.IntentsList.Contains(_intent)) return;
                 _context.StartActivity(_intent);
+                DataHolder.IntentsList.Add(_intent);
             };
             return convertView;
         }
 
-        public saved_track GetTrack(int position)
-        {
-            return _songList[position];
-        }
+        public saved_track GetTrack(int position) => _songList[position];
 
         public override int Count => _songList.Count;
     }

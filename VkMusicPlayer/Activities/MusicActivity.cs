@@ -4,8 +4,6 @@ using System.Threading.Tasks;
 using Android.App;
 using Android.OS;
 using Android.Support.V7.App;
-using Android.Util;
-using Android.Views;
 using Android.Widget;
 using AlertDialog = Android.App.AlertDialog;
 
@@ -67,6 +65,7 @@ namespace VkMusicPlayer
                                                 x.Artist.ToLower().Contains(searchText.Text.ToLower())).ToList();
                             else
                                 searchList = DataHolder.SongLists;
+                            DataHolder.PlayLists = searchList;
                         })
                     .ContinueWith(task =>
                         {

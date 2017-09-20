@@ -1,41 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:custom="http://schemas.android.com/apk/res/com.canary.vkplayer"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res/com.canary.vkplayer"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-  <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:layout_gravity="center"
-      android:text="Song name"
-      android:id="@+id/SongNameTv" />
-  <LinearLayout
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:paddingLeft="25dp"
-      android:layout_gravity="center"
-      android:paddingRight="25dp"
-      android:orientation="horizontal">
-    <VkMusicPlayer.IconifyTextView
-      custom:Typeface="fonts/materialdesignicons.ttf"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:text="@string/previous"/>
-    <VkMusicPlayer.IconifyTextView
-      custom:Typeface="fonts/materialdesignicons.ttf"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:text="@string/play_pause"/>
-    <VkMusicPlayer.IconifyTextView
-      custom:Typeface="fonts/materialdesignicons.ttf"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:text="@string/stop"/>
-    <VkMusicPlayer.IconifyTextView
-      custom:Typeface="fonts/materialdesignicons.ttf"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:text="@string/next"/>
-  </LinearLayout>
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="300dp" />
+    <SeekBar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:max="99"
+        android:id="@+id/MusicLineBar" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/texts"
+        android:padding="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:gravity="center"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:text="Song name"
+            android:textColor="@android:color/black"
+            android:id="@+id/SongNameTv" />
+        <FrameLayout
+            android:layout_marginTop="25dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:gravity="center">
+            <VkMusicPlayer.IconifyTextView
+                custom:Typeface="fonts/ionicons.ttf"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/PreviousBtn"
+                android:layout_gravity="left"
+                android:text="@string/previous" />
+            <VkMusicPlayer.IconifyTextView
+                custom:Typeface="fonts/ionicons.ttf"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/PlayPauseBtn"
+                android:layout_gravity="center"
+                android:text="@string/pause" />
+            <VkMusicPlayer.IconifyTextView
+                custom:Typeface="fonts/ionicons.ttf"
+                android:layout_width="50dp"
+                android:id="@+id/NextBtn"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+                android:text="@string/next" />
+        </FrameLayout>
+        <FrameLayout
+            android:layout_marginTop="25dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"
+            android:padding="5dp">
+            <VkMusicPlayer.IconifyTextView
+                custom:Typeface="fonts/materialdesignicons.ttf"
+                android:layout_width="50dp"
+                android:layout_gravity="left"
+                android:layout_height="50dp"
+                android:id="@+id/ShuffleBtn"
+                android:text="@string/shuffle" />
+            <VkMusicPlayer.IconifyTextView
+                custom:Typeface="fonts/materialdesignicons.ttf"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:id="@+id/ReplayBtn"
+                android:text="@string/replay" />
+            <VkMusicPlayer.IconifyTextView
+                custom:Typeface="fonts/materialdesignicons.ttf"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="right"
+                android:id="@+id/PlayListBtn"
+                android:text="@string/play_list" />
+        </FrameLayout>
+    </LinearLayout>
 </LinearLayout>
