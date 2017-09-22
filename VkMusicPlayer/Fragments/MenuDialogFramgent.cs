@@ -1,5 +1,4 @@
-﻿using System;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Support.V7.App;
@@ -11,8 +10,8 @@ namespace VkMusicPlayer
     public class MenuDialogFramgent : DialogFragment
     {
         private ListView _menuList;
-        private int _position;
-        private AppCompatActivity _activity;
+        private readonly int _position;
+        private readonly AppCompatActivity _activity;
 
         public MenuDialogFramgent(AppCompatActivity activity, int position)
         {

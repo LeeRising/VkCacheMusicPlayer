@@ -46,9 +46,10 @@ namespace VkMusicPlayer
                 if (prev != null)
                     ft.Remove(prev);
                 var getAdapter = _musicListView.Adapter;
-                var track = (getAdapter as MusicAdapter)?.GetTrack(e.Position);
+                var track = (getAdapter as MusicAdapter)?[e.Position];
                 if (track != null) new MenuDialogFramgent(this, track.Position).Show(ft, "music_dialog");
             };
+            DataHolder.PlayLists = DataHolder.NotShuffleList = DataHolder.SongLists;
         }
 
         private void SearchBar()
@@ -65,7 +66,7 @@ namespace VkMusicPlayer
                                                 x.Artist.ToLower().Contains(searchText.Text.ToLower())).ToList();
                             else
                                 searchList = DataHolder.SongLists;
-                            DataHolder.PlayLists = searchList;
+                            DataHolder.PlayLists = DataHolder.NotShuffleList = searchList;
                         })
                     .ContinueWith(task =>
                         {

@@ -126,8 +126,10 @@
     <Compile Include="Activities\MainActivity.cs" />
     <Compile Include="Activities\MusicActivity.cs" />
     <Compile Include="Activities\PlayerActivity.cs" />
+    <Compile Include="Adapters\PlayListAdapter.cs" />
     <Compile Include="Controls\IconifyTextView.cs" />
     <Compile Include="Fragments\MenuDialogFramgent.cs" />
+    <Compile Include="Fragments\PlayListFragment.cs" />
     <Compile Include="Helper\DataHolder.cs" />
     <Compile Include="Models\SongModel.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -136,7 +138,6 @@
     <Compile Include="Adapters\MusicAdapter.cs" />
     <Compile Include="Helper\MusicEncoder.cs" />
     <Compile Include="Tasks\LoadMusicTask.cs" />
-    <Compile Include="Tasks\PlayerTask.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\fonts\materialdesignicons.ttf" />
@@ -148,7 +149,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Assets\AboutAssets.txt" />
-    <AndroidResource Include="Resources\layout\music_list_layout.axml">
+    <AndroidResource Include="Resources\layout\main_music_layout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\music_menu_fragment.axml">
@@ -160,7 +161,10 @@
     <AndroidResource Include="Resources\layout\Lyrics.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\player_music_list.axml">
+    <AndroidResource Include="Resources\layout\play_list_fragment.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\play_list_layout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

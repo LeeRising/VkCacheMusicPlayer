@@ -24,7 +24,7 @@
         <VkMusicPlayer.IconifyTextView
             custom:Typeface="fonts/materialdesignicons.ttf"
             android:id="@+id/ClearSearch"
-            android:layout_height="36dp"
+            android:layout_height="30dp"
             android:layout_width="45dp"
             android:text="@string/delete_arrow"
             android:layout_gravity="center|right" />
